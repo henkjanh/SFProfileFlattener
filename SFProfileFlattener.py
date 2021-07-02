@@ -57,67 +57,123 @@ for file in filenames:
 
         XMLtoBuild += str('\n<!-- USER PERMISSIONS -->\n')
         for elem in rootOfXML.iter('userPermissions'):   
-            XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'</'+elem.tag+'>''\n')        
+            i = len(elem)
+            count = 0
+            
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
 
         XMLtoBuild += str('\n<!-- OBJECT PERMISSIONS -->\n')
         for elem in rootOfXML.iter('objectPermissions'):
-            # i = len(elem)
-            # print(i)
-            XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'<'+elem[2].tag+'>'+elem[2].text+'</'+elem[2].tag+'>'+'<'+elem[3].tag+'>'+elem[3].text+'</'+elem[3].tag+'>'+'<'+elem[4].tag+'>'+elem[4].text+'</'+elem[4].tag+'>'+'<'+elem[5].tag+'>'+elem[5].text+'</'+elem[5].tag+'>'+'<'+elem[6].tag+'>'+elem[6].text+'</'+elem[6].tag+'>'+'</'+elem.tag+'>''\n')
+            i = len(elem)
+            count = 0
+            
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
 
         XMLtoBuild += str('\n<!-- RECORDTYPE VISIBILITIES -->\n')
         for elem in rootOfXML.iter('recordTypeVisibilities'):
-            if len(elem) == 3:
-                XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'<'+elem[2].tag+'>'+elem[2].text+'</'+elem[2].tag+'>'+'</'+elem.tag+'>''\n')
-            elif len(elem) == 4:
-                XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'<'+elem[2].tag+'>'+elem[2].text+'</'+elem[2].tag+'>'+'<'+elem[3].tag+'>'+elem[3].text+'</'+elem[3].tag+'>'+'</'+elem.tag+'>''\n')
-        
+            i = len(elem)
+            count = 0
+
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
+
         XMLtoBuild += str('\n<!-- LAYOUT ASSIGNMENTS -->\n')
         for elem in rootOfXML.iter('layoutAssignments'):
-            # i = len(elem)
-            # print(i)
-            if len(elem) == 1:
-                XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'</'+elem.tag+'>''\n')
-            elif len(elem) == 2:
-                XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'</'+elem.tag+'>''\n')
+            i = len(elem)
+            count = 0
+            
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
 
         XMLtoBuild += str('\n<!-- FIELD PERMISSIONS -->\n')
         for elem in rootOfXML.iter('fieldPermissions'):
-            # i = len(elem)
-            # print(i)
-            XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'<'+elem[2].tag+'>'+elem[2].text+'</'+elem[2].tag+'>'+'</'+elem.tag+'>''\n')
+            i = len(elem)
+            count = 0
+            
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
 
         XMLtoBuild += str('\n<!-- TAB VISIBILITIES -->\n')
         for elem in rootOfXML.iter('tabVisibilities'):
-            # i = len(elem)
-            # print(i)
-            XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'</'+elem.tag+'>''\n')
+            i = len(elem)
+            count = 0
+            
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
 
         XMLtoBuild += str('<!-- APPLICATION VISIBILITIES -->\n')
         for elem in rootOfXML.iter('applicationVisibilities'):
-            # i = len(elem)
-            # print(i)
-
-            # elemCounter = 0
-            # while i != 0:
-            #     print('hoi')
-            #     i -= 1
-            #     elemCounter + 1
-            XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'<'+elem[2].tag+'>'+elem[2].text+'</'+elem[2].tag+'>'+'</'+elem.tag+'>''\n')
+            i = len(elem)
+            count = 0
+            
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
 
         XMLtoBuild += str('\n<!-- CLASS ACCESSES -->\n')
         for elem in rootOfXML.iter('classAccesses'):
-            # i = len(elem)
-            # print(i)
-            XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'</'+elem.tag+'>''\n')
+            i = len(elem)
+            count = 0
+            
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
 
         XMLtoBuild += str('\n<!-- PAGE ACCESSES -->\n')
         for elem in rootOfXML.iter('pageAccesses'):
-            XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'</'+elem.tag+'>''\n')
+            i = len(elem)
+            count = 0
+            
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
 
         XMLtoBuild += str('\n<!-- CUSTOM METADATA TYPES ACCESSES -->\n')
         for elem in rootOfXML.iter('customMetadataTypeAccesses'):
-            XMLtoBuild += str('<'+elem.tag+'>'+'<'+elem[0].tag+'>'+elem[0].text+'</'+elem[0].tag+'>'+'<'+elem[1].tag+'>'+elem[1].text+'</'+elem[1].tag+'>'+'</'+elem.tag+'>''\n')
+            i = len(elem)
+            count = 0
+            
+            XMLtoBuild += str('<'+elem.tag+'>')
+            while count < i:
+                XMLtoBuild += str('<'+elem[count].tag+'>'+elem[count].text+'</'+elem[count].tag+'>')
+                count += 1
+            XMLtoBuild += str('</'+elem.tag+'>\n')
+            print('\n')
 
         XMLtoBuild += str('\n<!-- CUSTOM PERMISSIONS -->\n')
         XMLtoBuild += '''\n</Profile>'''
